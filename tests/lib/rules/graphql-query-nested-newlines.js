@@ -40,6 +40,25 @@ ruleTester.run("graphql-query-nested-newlines", rule, {
                 query: gql\`
                     {
                         me {
+                            immediatelyNested {
+                                sup
+                            }
+                        }
+                    }
+                \`,
+                options: {
+                    props: ({ data }) => ({
+                        user: data.me,
+                        isLoading: data.loading
+                    })
+                }
+            };
+        `,
+        `
+            export default {
+                query: gql\`
+                    {
+                        me {
                             id
 
                             avatar {
