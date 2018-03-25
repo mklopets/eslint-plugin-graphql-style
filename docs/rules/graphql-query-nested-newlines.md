@@ -1,4 +1,4 @@
-# Require newlines before nested selection sets in Apollo GraphQL queries. (graphql-query-nested-newlines)
+# Require newlines before nested selection sets in Apollo GraphQL queries (graphql-query-nested-newlines)
 
 ## Rule Details
 
