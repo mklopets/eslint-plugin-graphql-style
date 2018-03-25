@@ -15,6 +15,28 @@ ruleTester.run("graphql-query-nested-newlines", rule, {
     valid: [
         `
             export default {
+                // using a non-gql tag means no linteroo
+                query: idk\`
+                    {
+                        me {
+                            id
+
+                            avatar {
+                                small
+                            }
+                        }
+                    }
+                \`,
+                options: {
+                    props: ({ data }) => ({
+                        user: data.me,
+                        isLoading: data.loading
+                    })
+                }
+            };
+        `,
+        `
+            export default {
                 query: gql\`
                     {
                         me {
